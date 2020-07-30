@@ -6,7 +6,17 @@
 //
 
 import Foundation
+import CoreMotion
 
-struct MovementManager {
+struct MovementManager
+{
+    var motionActivityManager  : CMMotionActivityManager = CMMotionActivityManager()
+    var operationQueue : OperationQueue = OperationQueue()
     
+    func startMotionManager()
+    {
+        motionActivityManager.startActivityUpdates(to: operationQueue) { (acivity) in
+            
+        }
+    }
 }
