@@ -15,8 +15,9 @@ struct MovementManager
     
     func startMotionManager()
     {
-        motionActivityManager.startActivityUpdates(to: operationQueue) { (acivity) in
-            
+        motionActivityManager.startActivityUpdates(to: operationQueue) { (activity) in
+            guard (activity != nil) else {return}
+            debugPrint("activity: \(activity?.description)")
         }
     }
 }
