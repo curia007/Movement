@@ -8,16 +8,23 @@
 import Foundation
 import CoreMotion
 
-struct MovementManager
+public struct MovementManager
 {
     var motionActivityManager  : CMMotionActivityManager = CMMotionActivityManager()
     var operationQueue : OperationQueue = OperationQueue()
     
-    func startMotionManager()
+    public init()
+    {
+        
+    }
+    
+    public func startMotionManager()
     {
         motionActivityManager.startActivityUpdates(to: operationQueue) { (activity) in
-            guard (activity != nil) else {return}
-            debugPrint("activity: \(activity?.description)")
+            if let activity = activity
+            {
+                debugPrint("activity: \(String(describing: activity.description))")
+            }
         }
     }
 }
