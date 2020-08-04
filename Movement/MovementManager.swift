@@ -24,6 +24,7 @@ public struct MovementManager
             if let activity = activity
             {
                 debugPrint("activity: \(String(describing: activity.description))")
+                
             }
         }
     }
